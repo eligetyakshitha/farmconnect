@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FarmConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+    <div class="logo">
+        <div class="logo-circle">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+        <h1>FarmConnect</h1>
+        <p>Smart Agriculture Platform</p>
+    </div>
+
+    <div class="tabs">
+        <button id="loginTab" class="active" onclick="showLogin()">Sign In</button>
+        <button id="signupTab" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="form active">
+        <div class="input">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-phone"></i>
+            <input type="tel" placeholder="Mobile Number" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="loginPass" placeholder="Password" required>
+            <i class="fa fa-eye eye" onclick="togglePass('loginPass', this)"></i>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+    </form>
+
+    <!-- SIGNUP -->
+    <form id="signupForm" class="form">
+        <div class="input">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Full Name" required>
+        </div>
+
+        <div class="input">
+            <i class="fa fa-phone"></i>
+            <input type="tel" id="phone" placeholder="Mobile Number" required>
+        </div>
+
+        <button type="button" class="otp-btn" onclick="sendOTP()">Send OTP</button>
+
+        <div class="input">
+            <i class="fa fa-key"></i>
+            <input type="text" id="otp" placeholder="Enter OTP">
+        </div>
+
+        <div class="input">
+            <i class="fa fa-lock"></i>
+            <input type="password" id="signupPass" placeholder="Create Password" required>
+            <i class="fa fa-eye eye" onclick="togglePass('signupPass', this)"></i>
+        </div>
+
+        <button type="button" class="btn" onclick="verifyOTP()">Create Account</button>
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
